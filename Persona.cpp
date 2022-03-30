@@ -1,4 +1,5 @@
 #include<iostream>
+#include<string>
 using namespace std;
 
 class Persona{
@@ -72,12 +73,14 @@ void Estudiante :: mostrarEstudiante(){
 }
 
 int main(){
+    string nombre;
     Persona p("Juan Perez", "40302010",25);
-    p.mostrarDatos();
+    p.mostrarDatos(); cout<<endl;
     Docente d("Pablo Iglesias", "10203040", 54, 3000, "Auditoria informatica");
-    d.mostrarDocente();
+    d.mostrarDocente(); cout<<endl;
     int nota[] = {20, 19, 18};
-    Estudiante e("Carlos Paredes", "90706050", 19, nota, 3, "2021-123");
-    e.mostrarEstudiante();
+    cout<<"Ingrese nombre de estudiante: "; fflush(stdin); getline(cin,nombre);
+    Estudiante e(nombre, "90706050", 19, nota, 3, "2021-123");
+    e.mostrarEstudiante(); cout<<endl;
     return 0;
 }
